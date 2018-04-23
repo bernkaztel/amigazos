@@ -118,7 +118,7 @@ class Example extends React.Component {
   render() {
     return (
 
-      <Form className="formCard">
+      <Form className="formCard" id="formsbm">
         <FormGroup>
           <Label for="exampleEmail">Nombre</Label>
           <Input
@@ -161,7 +161,7 @@ class Example extends React.Component {
           />
         </FormGroup>
         <br />
-       <button type="button" onClick={this.getToken}>Submit</button>
+       <button id="btnsbpay" type="button" onClick={this.getToken}>Obtener acceso</button>
       </Form>
     );
   }

@@ -4,9 +4,10 @@ import Jumbotron from "./reacstrap/Jumbotron";
 import Form from "./reacstrap/Form";
 import { Container, Row, Col } from "reactstrap";
 import { Media } from "reactstrap";
-import FormCard from './reacstrap/FormCard'
-import {connect} from 'react-redux'
-import Navbar from '../components/reacstrap/Navbar'
+import FormCard from './reacstrap/FormCard';
+import {connect} from 'react-redux';
+import Navbar from '../components/reacstrap/Navbar';
+import userimg from './images/iconoInterfaces.png';
 
 import Style from './style.css'
 
@@ -50,7 +51,7 @@ class Registration extends Component {
 
   render() {
     return (
-      <Container className="background-one">
+      <Container className="background-one" id="contreg">
         <Navbar />
         <h1 className="text-center titles">Personaliza tu perfil</h1>
         <Row>
@@ -58,9 +59,9 @@ class Registration extends Component {
             <Form />
           </Col>
           <Col style={{ marginTop: "20px", marginLeft: "70px" }}>
-            <img
-              src="https://dummyimage.com/350x350/d1d1d1/000000"
-              alt="Generic placeholder image"
+            <img id = "userimg"
+              src={userimg}
+              alt="User"
             />
           </Col>
      
