@@ -124,6 +124,9 @@ class Example extends React.Component {
 
   render() {
     return (
+
+      <Form className="formCard" id="formsbm">
+
       <div>
         <Form className="formCard">
           <FormGroup>
@@ -168,23 +171,22 @@ class Example extends React.Component {
             />
           </FormGroup>
         </Form>
+
         <FormGroup>
           <Label for="exampleSelect">Select</Label>
+          
           <Input type="select" name="select" id="exampleSelect" onChange={this.changeValue}>
             <option
-              value="2000"
+              value="normal"
              
-            >
               Sala Estándar
             </option>
             <option
-              value="20000"
-              
-            >
+              value="plus"
               Sala Plus
             </option>
             <option
-              value="200000"
+              value="vip"
             
             
             >
@@ -192,10 +194,46 @@ class Example extends React.Component {
             </option>
           </Input>
         </FormGroup>
-        <button type="button" onClick={this.getToken}>
-          Submit
-        </button>
+
+        <FormGroup>
+          <Label for="examplePassword">Número de tarjeta</Label>
+          <Input
+            type="cardnumber"
+            name="password"
+            onChange={this.onNumberChange}
+            id="examplePassword"
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label for="examplePassword">CVV</Label>
+          <Input
+            type="cvv"
+            name="number"
+            onChange={this.onCVCChange}
+            id="cvv"
+          />
+          <Label for="examplePassword">Fecha de expiración (AÑO)</Label>
+          <Input
+            type="text"
+            onChange={this.onYearChange}
+            name="password"
+            id="date"
+          />
+          <Label for="examplePassword">Fecha de expiración (MES)</Label>
+          <Input
+            type="text"
+            onChange={this.onMonthChange}
+            name="password"
+            id="date"
+          />
+        </FormGroup>
+        <br />
+       <button id="btnsbpay" type="button" onClick={this.getToken}>Obtener acceso</button>
+      </Form>
+
+      
       </div>
+
     );
   }
 }

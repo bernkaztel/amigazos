@@ -16,11 +16,11 @@ class writeMessage extends React.Component{
          // console.log(author)
          console.log('codes')
          
-        this.props.socket.socket.post('/chat/broadcast',{ roomName: 'myroom',user:this.props.displayName,message:message },
+        this.props.socket.socket.post('/chat/broadcast',{ roomName: `${this.props.chatRoom.chatRoom}`,user:this.props.user.displayName,message:message },
           function(data,status){
               console.log(data);
           })
-          this.props.onNewMessage({user: this.props.displayName, message: message});
+          this.props.onNewMessage({user: this.props.user.displayName, message: message});
           this.refs.message.value = '';
         }
       
@@ -47,6 +47,12 @@ class writeMessage extends React.Component{
     return {
       user: state.user,
       userLoading: state.loading.user,
+      chatRoom: state.chatRoom
     }
   }
   export default connect(mapStateToProps, { getUser })(writeMessage);
+
+
+  
+
+  
