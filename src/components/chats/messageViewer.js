@@ -11,7 +11,7 @@ class MessageViewer extends React.Component{
           return ( 
                    <NewMessage
           
-                    user={message.user}
+                    userdis={message.user}
                     message={message.message}
                     key={index} 
                     index={index}/>

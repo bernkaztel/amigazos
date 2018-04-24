@@ -10,17 +10,20 @@ import {connect} from 'react-redux';
 
 // imifconport io from 'socket.io-client';
 import socketIOClient from 'socket.io-client';
-const sailsIOClient = require('sails.io.js');
+import sailsIOClient from 'sails.io.js';
 
-const io = sailsIOClient(socketIOClient);
 
 class ChatContainer extends React.Component{
   constructor(props){
+    
       super(props)
       this.state={ 
-          messages:[]
-         
-     } 
+          messages:[]         
+      }
+      
+      const io = sailsIOClient(socketIOClient);
+      io.sails.url = 'http://216.224.183.21:1339';
+      this.io = io;
       this.handleNewMessage=this.handleNewMessage.bind(this)
   }
  
@@ -33,23 +36,25 @@ class ChatContainer extends React.Component{
      
      // Instantiate the socket client (`io`)
      // (for now, you must explicitly pass in the socket.io client when using this library from Node.js)
-     io.sails.url = 'http://216.224.183.21:1339';
+
      //const apiUrl="http://216.224.183.21:1339";
      
       
-      io.socket.on('connect', function() {
-      
-       io.socket.get('/chat/subscribe?roomName=myroom', function(messages) {
+      this.io.socket.on('connect', function() {
+      console.log(this.props)
+       this.io.socket.get(`/chat/subscribe?roomName=${this.props.chatRoom.chatRoom}&user=${this.props.user.email}`, function(messages) {
 
         this.setState({message: messages})
         
        }.bind(this));
  
-       io.socket.on('msg', function(newMessage) {
+       this.io.socket.on('msg', function(newMessage) {
+         console.log("new message",newMessage);
          this.setState({
              messages: this.state.messages.concat([newMessage]),
              
          });
+         console.log("messages",this.state.messages);
         // io.socket.emit('msg',newMessage);
          
        }.bind(this));
@@ -59,7 +64,7 @@ class ChatContainer extends React.Component{
    
    handleNewMessage(newMessage) {
  
-   const user=this.state.user;
+   const user=newMessage.user;
      const messages = this.state.messages;
       this.setState({
          message: messages,
@@ -80,7 +85,7 @@ class ChatContainer extends React.Component{
               <Col md="8" className="d-block mx-auto">
 
                 <MessageViewer messages={this.state.messages} />
-                <WriteMessage socket={io} onNewMessage={this.handleNewMessage} />
+                <WriteMessage socket={this.io} onNewMessage={this.handleNewMessage} />
               </Col>
               <Col md="4" className="d-block mx-auto">
                 <ChatLateralBar />

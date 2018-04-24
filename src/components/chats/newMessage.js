@@ -10,7 +10,7 @@ class NewMessage extends React.Component{
   render(){
       return (
           <li className="ChatMessage" key={this.props.index}>
-            <span className="author"><strong>{this.props.user.displayName}</strong> dice:</span>
+            <span className="author"><strong>{this.props.userdis}</strong> dice:</span>
             <span className="message">"{this.props.message}"</span>
           </li>
           );
