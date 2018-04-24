@@ -112,6 +112,7 @@ class Example extends React.Component {
         token: token,
         amount: "20000",
         user: userId,
+        service: "vip"
       })
       .then(res => {
         console.log(res);
@@ -169,21 +170,22 @@ class Example extends React.Component {
         </Form>
         <FormGroup>
           <Label for="exampleSelect">Select</Label>
+          
           <Input type="select" name="select" id="exampleSelect" onChange={this.changeValue}>
             <option
-              value="2000"
+              value="normal"
              
             >
               Sala Estándar
             </option>
             <option
-              value="20000"
+              value="plus"
               
             >
               Sala Plus
             </option>
             <option
-              value="200000"
+              value="vip"
             
             
             >
