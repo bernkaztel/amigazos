@@ -26,6 +26,7 @@ footer{
 
 .titles {
   padding: 40px;
+  color: #24445c;
 }
 
 .formCard {
@@ -52,4 +53,86 @@ footer{
 
 .background-two {
   background-color:#33CCCC;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#userimg{
+  border-radius: 30%;
+  width: 85%;
+  height : 100%;
+  padding-left: 10%;
+}
+
+#btnsendf{
+  border-radius: 7px;
+  background-color: #445c7c;
+  border-color: hsl(214, 29%, 38%);
+  font-weight: 400;
+  color: white;
+}
+
+#formsbm {
+  background-color: rgba(68,92,124,0.1);
+    border-color: #24445c;
+    border-radius: 15px;
+    border: solid 2px;
+    color: #24445c;
+    font-weight: 600;
+}
+
+#btnsbpay {
+  border-radius: 8px;
+  width: 90%;
+  background-color: #fc9c04;
+  color: white;
+  font-weight: 400;
+  padding: 3%;
+  font-size: 28px;
+  margin-left: 4%;
+}
+
+.backline{
+  margin:4%;
+
+}
+
+#txtform {
+  margin-top: 0;
+  padding: 10px;
+  /* padding-right: 10%; */
+  /* color: #24445c; */
+  text-align: center;
+  background-color: #24445c;
+  color: white;
+}
+
+.backline {
+  border-color: #fc9c04;
+    color: white;
+    font-weight: 700;
+    border: 2px solid #fc9c04;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#contreg{
+  background-color: #ecece4;
+
+}
+
+.iconI{
+  width: 30px;
+  height: 5%;
+  margin-right: 5%;
 }

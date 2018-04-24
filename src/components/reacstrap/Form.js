@@ -95,7 +95,7 @@ class FormUser extends React.Component {
           <Input name="text" id="examplePassword"  onChange={this.onListPhoneChange} />
         </FormGroup>
         <br/>
-        <button type="button" onClick={ () => { this.pathSample(this.state.name, this.state.email, this.state.phone)}}>Enviar datos</button>
+        <button id="btnsendf" type="button" onClick={ () => { this.pathSample(this.state.name, this.state.email, this.state.phone)}}>Enviar datos</button>
 
       </Form>
     );
