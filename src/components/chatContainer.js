@@ -38,7 +38,7 @@ class ChatContainer extends React.Component{
      
       
       io.socket.on('connect', function() {
-      
+      console.log(this.props)
        io.socket.get('/chat/subscribe?roomName=myroom', function(messages) {
 
         this.setState({message: messages})

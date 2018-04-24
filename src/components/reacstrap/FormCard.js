@@ -112,7 +112,6 @@ class Example extends React.Component {
         token: token,
         amount: "20000",
         user: userId,
-        service: "vip"
       })
       .then(res => {
         console.log(res);
