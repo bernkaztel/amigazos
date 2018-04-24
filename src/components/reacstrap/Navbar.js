@@ -50,7 +50,7 @@ class Navbar extends Component {
             </li>
             {this.props.user == null ? (
               <button
-                className="btn btn-sucess"
+                 className="btn login"
                 onClick={this.props.googleLogin}
               >
                 Login
