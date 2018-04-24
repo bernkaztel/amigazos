@@ -13,7 +13,6 @@ import Style from './style.css'
 import { getUser } from "../actions/userActions";
 import axios from 'axios';
 
-
 class Registration extends Component {
   constructor() {
     super();
@@ -21,11 +20,11 @@ class Registration extends Component {
       userId: null
     }
   }
-  
+
   componentDidMount() {
     this.props.getUser()
 
-  
+
   }
 
   // componentWillReceiveProps(){
@@ -63,7 +62,7 @@ class Registration extends Component {
               alt="Generic placeholder image"
             />
           </Col>
-     
+
         </Row>
 
         <h1 className="text-center titles">Método de pago</h1>
