@@ -1,18 +1,10 @@
-  button {
-    background: #fc9c04;
-  }
 
-  #registro {
-  border-color:#fc9c04;
-  background: none;
-  color:black;
-  width: 200px;
-  font-size: 30px;
-  }
-
-  .login {
-    width: 150px;
-  }
+footer{
+  background-color: #2C3E50;
+  color:white;
+  height: 25%;
+  text-align: center;
+}
 
  .font-family {
    font-family: 'Roboto', sans-serif;
