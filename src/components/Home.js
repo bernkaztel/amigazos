@@ -37,8 +37,8 @@ class Home extends Component {
       <Container className="font-family">
         <Navbar />
         <JumbotronCard/>
-        <Col md={{ size: 4, offset: 4 }} className="d-block mx-auto">
-          <Button id="registro" onClick={this.props.googleLogin}>
+        <Col id="back-reg" md={{ size: 4, offset: 4 }} className="d-block mx-auto">
+          <Button size="lg" block id="registro"  onClick={this.props.googleLogin}>
             Regístrate
           </Button>
         </Col>
