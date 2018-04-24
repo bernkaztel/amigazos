@@ -33,25 +33,53 @@ class NavbarCustom extends Component {
   }
   render() {
     return (
-      <div>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">Inicio</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/components/">Inicio</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">Conocenos</NavLink>
-              </NavItem>
-              {this.props.user == null ? (
-                <NavItem >
-                  <button
-                    className="btn btn-sucess"
-                    onClick={this.props.googleLogin}
-                  >
-                    Login
+      <nav className="navbar navbar-expand-lg font-color">
+        <a className="navbar-brand font-color" href="#">
+          Navbar
+        </a>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"/>
+        </button>
+
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item active">
+              <a className="nav-link font-color" href="#">
+                Home <span className="sr-only">(current)</span>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link font-color" href="#">
+                Link
+              </a>
+            </li>
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle font-color"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Dropdown
+              </a>
+            </li>
+            {this.props.user == null ? (
+              <button
+                 className="btn login"
+                onClick={this.props.googleLogin}
+              >
+                Login
               </button>
                 </NavItem>
               ) : (

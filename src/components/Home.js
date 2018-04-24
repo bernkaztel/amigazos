@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import { googleLogin } from "../actions/userActions";
 import { getUser } from "../actions/userActions";
 import Navbar from "./reacstrap/Navbar";
+import './style.css';
 
 
 import axios from 'axios';
@@ -31,30 +32,19 @@ class Home extends Component {
   //   }
   // }
 
-
-
-  
-
-
-    
-
-  
-
   render() {
 
     return (
-
       <Container className="font-family">
         <Navbar />
-        <JumbotronCard />
-        <Col md={{ size: 4, offset: 4 }} className="d-block mx-auto">
-          <Button color="primary" onClick={this.props.googleLogin}>Inicia Sesión</Button>
-          <Button color="success" onClick={this.props.googleLogin}>
+        <JumbotronCard/>
+        <Col id="back-reg" md={{ size: 4, offset: 4 }} className="d-block mx-auto">
+          <Button size="lg" block id="registro"  onClick={this.props.googleLogin}>
             Regístrate
           </Button>
         </Col>
       </Container>
-      
+
     );
   }
 }
